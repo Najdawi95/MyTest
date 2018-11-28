@@ -1,0 +1,26 @@
+h1{
+    color: darkslateblue;
+    text-align: center;
+}
+p{
+    color: darkred;
+    text-align: center;
+}
+
+img{
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table_records{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+table, th, td{
+     border: 3px green solid;
+ }
