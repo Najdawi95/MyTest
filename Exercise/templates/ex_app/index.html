@@ -7,37 +7,38 @@
     <title>Index.html</title>
 </head>
 <body>
-<h1>Hello I am Index.html page...! GIIIIT</h1>
+<h1>Hello I am Index.html page...!</h1>
 <!--{{insert_index_from_views}}-->
 
-<img src="{% static 'images/alpachino.jpg' %}" alt="image" />
+<img src="{% static 'images/alpachino.jpg' %}" alt="image"/>
 <br>
 <div class="table_records">
     {% if Employees_Rows %}
     <table>
         <thead>
-            <th>Employee FName</th>
-            <th>Employee LName</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Company</th>
-            <th>Department</th>
+        <th>Employee FName</th>
+        <th>Employee LName</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Company</th>
+        <th>Department</th>
         </thead>
 
         {% for row in Employees_Rows %}
-            <tr>
-                <td>{{row.Emp_FName}}</td>
-                <td>{{row.Emp_LName}}</td>
-                <td>{{row.Emp_Email}}</td>
-                <td>{{row.Emp_Phone}}</td>
-                <td>{{row.Comp_Name}}</td>
-                <td>{{row.Dept_Name}}</td>
-            </tr>
+        <tr>
+            <td>{{row.Emp_FName}}</td>
+            <td>{{row.Emp_LName}}</td>
+            <td>{{row.Emp_Email}}</td>
+            <td>{{row.Emp_Phone}}</td>
+            <td>{{row.Comp_Name}}</td>
+            <td>{{row.Dept_Name}}</td>
+        </tr>
         {% endfor %}
 
-    {% else %}
+        {% else %}
         <P>No Employees Founds...!</P>
-    {% endif %}
+        {% endif %}
     </table>
+</div>
 </body>
 </html>
