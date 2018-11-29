@@ -3,42 +3,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/my_style.css' %}">
     <title>Index.html</title>
 </head>
 <body>
-<h1>Hello I am Index.html page...!</h1>
-<!--{{insert_index_from_views}}-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Hello I am Index.html page...!</h1>
+            <!--{{insert_index_from_views}}-->
 
-<img src="{% static 'images/alpachino.jpg' %}" alt="image"/>
-<br>
-<div class="table_records">
-    {% if Employees_Rows %}
-    <table>
-        <thead>
-        <th>Employee FName</th>
-        <th>Employee LName</th>
-        <th>Email</th>
-        <th>Phone Number</th>
-        <th>Company</th>
-        <th>Department</th>
-        </thead>
+            <img src="{% static 'images/alpachino.jpg' %}" alt="image"/>
 
-        {% for row in Employees_Rows %}
-        <tr>
-            <td>{{row.Emp_FName}}</td>
-            <td>{{row.Emp_LName}}</td>
-            <td>{{row.Emp_Email}}</td>
-            <td>{{row.Emp_Phone}}</td>
-            <td>{{row.Comp_Name}}</td>
-            <td>{{row.Dept_Name}}</td>
-        </tr>
-        {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Employees Table</h1>
+            {% if Employees_Rows %}
+            <table class="table table-hover table-bordered" id="employees_table">
+                <thead>
+                <th>Employee FName</th>
+                <th>Employee LName</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Company</th>
+                <th>Department</th>
+                </thead>
 
-        {% else %}
-        <P>No Employees Founds...!</P>
-        {% endif %}
-    </table>
+                {% for row in Employees_Rows %}
+                <tbody>
+                <tr>
+                    <td>{{row.Emp_FName}}</td>
+                    <td>{{row.Emp_LName}}</td>
+                    <td>{{row.Emp_Email}}</td>
+                    <td>{{row.Emp_Phone}}</td>
+                    <td>{{row.Comp_Name}}</td>
+                    <td>{{row.Dept_Name}}</td>
+                </tr>
+                </tbody>
+
+                {% endfor %}
+            </table>
+            {% else %}
+            <!--<P>No Employees Founds...!</P>-->
+            {% endif %}
+
+        </div>
+    </div>
+
+
+    <div id="form-div">
+        <div class="jumbotron">
+            <form method="post">
+                <div class="form-group">
+                    {{form.as_p}}
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-primary " value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>
