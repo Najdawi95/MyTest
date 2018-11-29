@@ -5,23 +5,19 @@ h1 {
 
 p {
     color: darkred;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 img {
-    width: 70%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.table_records {
     width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-table, th, td {
-    border: 3px green solid;
+#employees_table{
+
+    /*display: block;*/
+    margin-left: auto;
+    margin-right: auto;
 }
