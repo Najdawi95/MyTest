@@ -1,26 +1,27 @@
-h1{
+h1 {
     color: darkslateblue;
     text-align: center;
 }
-p{
+
+p {
     color: darkred;
     text-align: center;
 }
 
-img{
+img {
     width: 70%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.table_records{
+.table_records {
     width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
- }
+}
 
-table, th, td{
-     border: 3px green solid;
- }
+table, th, td {
+    border: 3px green solid;
+}
